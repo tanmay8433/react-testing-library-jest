@@ -3,7 +3,7 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const [data,setData]=useState();
+  const [data,setData]=useState("");
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -22,8 +22,10 @@ function App() {
       </header> */}
 {/* <input type='text' placeholder='Enter User Name' name='username' id='userId' value="tanmay" readOnly/> */}
       <p>First React test case</p>
-      <img title="AI genrated image" src='https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg'/>
-      <input type='text' value={data} onChange={(e)=>setData(e.target.value+"test")}/>
+      {/* <img title="AI genrated image" src='https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg'/>
+      <input type='text' value={data} onChange={(e)=>setData(e.target.value+"test")}/> */}
+      <button onClick={()=>setData("update data")}>click for update</button>
+      <h1>{data}</h1>
     </div>
   );
 }

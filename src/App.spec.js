@@ -1,7 +1,6 @@
-// import { screen,render, fireEvent } from "@testing-library/react";
-import renderer,{act} from "react-test-renderer"
-// import App from "./App";
-import Users from "./Users";
+import { screen,render, fireEvent } from "@testing-library/react";
+
+import App from "./App";
 // test("Test first React app case",()=>{
 // render(<App/>);
 // const text=screen.getByText(/First React test case/i); 
@@ -82,51 +81,11 @@ import Users from "./Users";
 // expect (input.value).toBe("atest");
 // })
 
-// beforeAll(()=>{
-//   console.log("before all hook")
-// })
-// beforeEach(()=>{
-//   console.log("before Each hook")
-// })
-// test("event click test case 1",()=>{
-//   console.log("1 test case")
-//   render(<App/>);
-//   let button=screen.getByRole("button");
-//   fireEvent.click(button);
-// expect(screen.getByText('update data')).toBeInTheDocument();
-// })
-// test("event click test case 2",()=>{
-//     console.log("2 test case")
-//   render(<App/>);
-//   let button=screen.getByRole("button");
-//   fireEvent.click(button);
-// expect(screen.getByText('update data')).toBeInTheDocument();
-// })
-// afterAll(()=>{
-//   console.log("after all hook")
-// })
-// afterEach(()=>{
-//   console.log("after Each hook")
-// })
 
 
-// snapshot testing practice
-// test("snapshot for app componenet",()=>{
-//   const container=render(<App/>);
- 
-// expect (container).toMatchSnapshot();
-// })
-
-
-
-test("class component method testing", () => {
-  let testRenderer;
-
-  act(() => {
-    testRenderer = renderer.create(<Users />);
-  });
-
-  const instance = testRenderer.root.findByType(Users).instance;
-
-  expect(instance.getUserlist()).toBe("user list");
-});
+test("event click test case",()=>{
+  render(<App/>);
+  let button=screen.getByRole("button");
+  fireEvent.click(button);
+expect(screen.getByText('update data')).toBeInTheDocument();
+})
