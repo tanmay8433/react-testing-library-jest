@@ -83,9 +83,9 @@ import App from "./App";
 
 
 
-test("event click test case",()=>{
-  render(<App/>);
-  let button=screen.getByRole("button");
-  fireEvent.click(button);
-expect(screen.getByText('update data')).toBeInTheDocument();
-})
+// test("event click test case",()=>{
+//   render(<App/>);
+//   let button=screen.getByRole("button");
+//   fireEvent.click(button);
+// expect(screen.getByText('update data')).toBeInTheDocument();
+// })

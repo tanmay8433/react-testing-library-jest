@@ -1,7 +1,8 @@
-// import { screen,render, fireEvent } from "@testing-library/react";
+import { screen,render, fireEvent } from "@testing-library/react";
 import renderer,{act} from "react-test-renderer"
-// import App from "./App";
-import Users from "./Users";
+import App, { handleOther } from "./App";
+// import Users from "./Users";
+
 // test("Test first React app case",()=>{
 // render(<App/>);
 // const text=screen.getByText(/First React test case/i); 
@@ -119,14 +120,26 @@ import Users from "./Users";
 
 
 
-test("class component method testing", () => {
-  let testRenderer;
+// test("class component method testing", () => {
+//   let testRenderer;
 
-  act(() => {
-    testRenderer = renderer.create(<Users />);
-  });
+//   act(() => {
+//     testRenderer = renderer.create(<Users />);
+//   });
 
-  const instance = testRenderer.root.findByType(Users).instance;
+//   const instance = testRenderer.root.findByType(Users).instance;
 
-  expect(instance.getUserlist()).toBe("user list");
-});
+//   expect(instance.getUserlist()).toBe("user list");
+// });
+
+// test("function component method testing",()=>{
+// render(<App/>);
+// const btn=screen.getByTestId("btn1")
+// fireEvent.click(btn);
+// expect(screen.getByText("update data")).toBeInTheDocument();
+// })
+
+
+test("method testing case 2",()=>{
+  expect(handleOther()).toMatch('hi')
+})

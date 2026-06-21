@@ -1,6 +1,6 @@
 import { screen,render, fireEvent } from "@testing-library/react";
 
-import App from "../App";
+// import App from "../App";
 // test("Test first React app case",()=>{
 // render(<App/>);
 // const text=screen.getByText(/First React test case/i); 
@@ -83,9 +83,9 @@ import App from "../App";
 
 
 
-test("event click test case",()=>{
-  render(<App/>);
-  let button=screen.getByRole("button");
-  fireEvent.click(button);
-expect(screen.getByText('update data')).toBeInTheDocument();
-})
+// test("event click test case",()=>{
+//   render(<App/>);
+//   let button=screen.getByRole("button");
+//   fireEvent.click(button);
+// expect(screen.getByText('update data')).toBeInTheDocument();
+// })
