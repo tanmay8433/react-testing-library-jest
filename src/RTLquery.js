@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 
 function RTLquery() {
+//    let Login=true;
+//    const[data,setData]=useState(false)
+//    useEffect(() => {
+//   setTimeout(()=>{
+// setData(true)
+//   },800)
+//    })
+   
   return (
     <>
     {/* <div>RTLquery</div>
@@ -13,7 +21,7 @@ function RTLquery() {
     <button>click one</button>
     <label htmlFor='id2'>user name</label>
     <input type='text' id='id2'/>
-    <div role='customRole'>custom role-used for non sematic tags</div>
+    <div frole='customRole'>custom role-used for non sematic tags</div>
 
 
     <h1>RTLquery-getAllByRole</h1>
@@ -25,7 +33,7 @@ function RTLquery() {
         <option>3</option>
 
      </select> */}
-<h1>RTLquery-getByLabelText</h1>
+{/* <h1>RTLquery-getByLabelText</h1>
    <label htmlFor='user-name'>user name</label>
     <input type='text' id='user-name' defaultValue={'tanmay'} />
 
@@ -93,7 +101,28 @@ function RTLquery() {
       <button title='clickme'>new title </button>
       <br/>
       <span title='spantitle'>fashion india</span>
-       <span title='spantitle'>fashion india</span>
+       <span title='spantitle'>fashion india</span> */}
+
+
+       {/* <h1>assertion method</h1>
+       <input type='text' 
+       className='assertioninput' 
+       defaultValue={'assertionValue'}
+       id='assertionid'
+       name='userName'
+      data-test="assertiondataTest"
+       />
+       <button className='kk' id='btnid'>click assertion test</button> */}
+       {/* <h1>queryBy vs queryAllBy</h1>
+      {Login?<button >Logout</button>: <button>Login</button>} 
+
+
+      <h1>findB and findAllBy</h1>
+{data?<h1>data fetch</h1>:<h1>data not fetch</h1>}
+       */}
+
+      <h1 id='customtestid'>custom test</h1>
+      <img alt="AI genrated image" src='https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg'/>
     </>
   )
 }
