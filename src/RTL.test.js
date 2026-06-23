@@ -1,5 +1,7 @@
-import { render, screen } from "@testing-library/react"
+import { act, render, screen, within } from "@testing-library/react"
 import RTLquery from "./RTLquery"
+import userEvent from "@testing-library/user-event"
+import Newcomponent from "./Newcomponent"
 // import { configure } from "@testing-library/dom"
 // configure({testIdAttribute:'element-id'})
 // test('should first RTL query - getByRole', () => { 
@@ -197,17 +199,73 @@ import RTLquery from "./RTLquery"
 //   const h1find=await screen.findByText('data fetch',{},{timeout:4000});
 //   expect(h1find).toBeInTheDocument()
 // })
-test('test case for custom query',()=>{
-  render(<RTLquery/>)
-  const ele=document.querySelector("#customtestid")
-  expect(ele).toBeInTheDocument()
-  expect(ele).toHaveTextContent('custom test')
-})
+  // test('test case for custom query',()=>{
+  //   render(<RTLquery/>)
+  //   const ele=document.querySelector("#customtestid")
+  //   expect(ele).toBeInTheDocument()
+  //   expect(ele).toHaveTextContent('custom test')
+  // })
 
-test('test case for getByAltText',()=>{
-  render(<RTLquery/>)
-  // const ele=screen.getByAltText('AI genrated image')
-  // expect(ele).toBeInTheDocument()
-   const ele=screen.getAllByAltText('AI genrated image')
-  expect(ele[0]).toBeInTheDocument()
+  // test('test case for getByAltText',()=>{
+  //   render(<RTLquery/>)
+  //   // const ele=screen.getByAltText('AI genrated image')
+  //   // expect(ele).toBeInTheDocument()
+  //    const ele=screen.getAllByAltText('AI genrated image')
+  //   expect(ele[0]).toBeInTheDocument()
+  // })
+
+
+  // test("find ele withan ele",()=>{
+  //   render(<RTLquery/>)
+  //   const pEl=screen.getByText("find ele withan ele")
+  //   const subEl=within(pEl).getByText('child ele')
+  //   expect(pEl).toBeInTheDocument()
+  //   expect(subEl).toBeInTheDocument()
+  // })
+
+
+  // test("user event library test in click event",async()=>{
+  //   userEvent.setup();
+  //     render(<RTLquery/>)
+  //     const btn=screen.getByRole('button');
+  //  await userEvent.click(btn);
+  //     expect(screen.getByText("hello user data")).toBeInTheDocument()
+  // })
+
+  // test("onchange test case for keyboard interaction",async()=>{
+  //   userEvent.setup()
+  // render(<RTLquery/>)
+  // const inputField=screen.getByRole('textbox')
+  // await userEvent.type(inputField,"anil")
+  // expect(screen.getByText('anil')).toBeInTheDocument()
+  // })
+
+
+  // test('act function',async()=>{
+  // userEvent.setup()
+  // render(<RTLquery/>)
+  // const inputField=screen.getByRole('textbox')
+  // await act(async()=>{
+
+  //   await userEvent.type(inputField,"anil")
+  // })
+  // expect(screen.getByText('anil')).toBeInTheDocument()
+  // })
+
+
+  // test('props component test case',()=>{
+  //   const name='agarwal'
+  //   render(<Newcomponent name={name} />)
+  //   const username=screen.getByText(name);
+  //   expect(username).toBeInTheDocument()
+
+  // })
+
+test('fun props test case',async()=>{
+  const testFun=jest.fn()
+  userEvent.setup()
+  render(<Newcomponent testFun={testFun}/>)
+  const btn=screen.getByRole('button')
+  await userEvent.click(btn); 
+  expect(testFun).toBeCalled();
 })

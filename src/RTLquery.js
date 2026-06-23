@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react'
+import Newcomponent from './Newcomponent';
 
 function RTLquery() {
 //    let Login=true;
@@ -8,7 +9,11 @@ function RTLquery() {
 // setData(true)
 //   },800)
 //    })
-   
+   const [userdata,setUserData]=useState("")
+   const handleuserEvent=()=>{
+    setUserData("hello user data")
+   }
+   const [name,setName]=useState("");
   return (
     <>
     {/* <div>RTLquery</div>
@@ -123,6 +128,22 @@ function RTLquery() {
 
       <h1 id='customtestid'>custom test</h1>
       <img alt="AI genrated image" src='https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg'/>
+
+
+      <div>find ele withan ele
+        <p>child ele</p>
+        <button onClick={handleuserEvent}>click me for test user event library</button>
+        <h1>{userdata}</h1>
+
+
+        <h1>onChange Event Testing</h1>
+        <input type='text' placeholder='enter name' value={name} onChange={(e)=>setName(e.target.value)}/>
+        <h1>{name}</h1>
+
+        <Newcomponent name={"tanmay"}/>
+
+       
+      </div>
     </>
   )
 }
