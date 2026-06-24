@@ -9,11 +9,25 @@ function RTLquery() {
 // setData(true)
 //   },800)
 //    })
+
+
    const [userdata,setUserData]=useState("")
    const handleuserEvent=()=>{
     setUserData("hello user data")
    }
    const [name,setName]=useState("");
+
+
+   const [apidata,setApiData]=useState([])
+   const getData=async()=>{
+    let result=await fetch("https://jsonplaceholder.typicode.com/users")
+    result=await result.json()
+    setApiData(result)
+    console.log(result,"fffff")
+   }
+   useEffect(()=>{
+getData()
+   },[])
   return (
     <>
     {/* <div>RTLquery</div>
@@ -142,7 +156,15 @@ function RTLquery() {
 
         <Newcomponent name={"tanmay"}/>
 
-       
+       <p>debugging</p>
+       <p>API list users data</p>
+       {apidata?.map((item,index)=>
+      <ul key={index}>
+      <li>{ item?.name} 
+        </li> 
+        </ul>
+        
+        )}
       </div>
     </>
   )

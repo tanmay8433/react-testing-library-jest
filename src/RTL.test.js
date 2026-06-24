@@ -1,4 +1,4 @@
-import { act, render, screen, within } from "@testing-library/react"
+import { act, logRoles, prettyDOM, render, screen, within } from "@testing-library/react"
 import RTLquery from "./RTLquery"
 import userEvent from "@testing-library/user-event"
 import Newcomponent from "./Newcomponent"
@@ -268,4 +268,22 @@ test('fun props test case',async()=>{
   const btn=screen.getByRole('button')
   await userEvent.click(btn); 
   expect(testFun).toBeCalled();
+})
+
+
+test("debugging test case",()=>{
+  const {component,debug}=render(<RTLquery/>)
+  // const p=screen.getByText("debugging")
+  // expect(p).toBeInTheDocument()
+  // console.log(component)
+  // console.log(prettyDOM(component))
+  debug()
+  // logRoles(component)
+})
+
+
+test("api testing using msw",async()=>{
+  render(<RTLquery/>)
+  const ele=await screen.findAllByRole('listitem');
+  expect(ele).toHaveLength(4)
 })
